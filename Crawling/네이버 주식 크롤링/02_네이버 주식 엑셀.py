@@ -30,4 +30,4 @@ for i in range(len(codes)):
     ws['A'+str(i+2)] = companys[i]
     ws['B'+str(i+2)] = price
 
-wb.save(r'D:\신희승\Study\Crawling\주식_data.xlsx')
+wb.save(r'D:\신희승\Study\Crawling\네이버 주식 크롤링\주식_data.xlsx')
