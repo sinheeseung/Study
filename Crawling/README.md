@@ -52,3 +52,22 @@ HTML 문서를 탐색해서 원하는 부분만 쉽게 뽑아낼 수 있게 해�
                  바로 아래에 있는 태그를 선택  
       ex) .logo_sports > span   => logo_sports라는 class 밑의 span 태그 선택  
    ex) soup.select(css선택자)  
+
+
+## Lecture3
+
+### URL
+
+인터넷 주소 형식
+
+Protocol - Domain - Path - Parameter
+
+  -Protocol : http, https  
+  -Domain : IP주소에 이름을 부여한 것  
+  -Path : 서버에서 해당 페이지의 경로  
+  -Parameter : Key과 value로 구성, &로 연결
+
+  ### Pyautogui
+
+  마우스, 키보드 매크로 라이브러리
+  간단한 입력 창 띄우기에 사용
