@@ -31,5 +31,17 @@ for info in player_info:
     nation.append(player[6].img['alt'])  # img 태그의 alt 속성
     team.append(player[7].img['alt'])
     value.append(player[8].text.strip())
-print(team)
-print(value)
+
+df = pd.DataFrame(
+    {"number": number,
+     "name": name,
+     "position": position,
+     "age": age,
+     "nation": nation,
+     "team": team,
+     "value": value}
+)
+
+print(df)
+
+df.to_csv('TransferMarkt25.csv', index=False)
