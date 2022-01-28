@@ -85,3 +85,17 @@ Protocol - Domain - Path - Parameter
 ### 셀레니움
   
   브라우저를 실제로 띄워서 사람처럼 동작하도록 만들 수 있다.
+  
+## Lecture 5
+
+### Pandas
+
+df.shape : 행과 열의 개수 파악  
+df.info : 전체 정보 요약  
+df.head : 처음 5개 행 보여주기  
+df.tail : 마지막 5개 행 보여주기  
+df[:10], df.iloc[:10] : 처음 10개 행까지 보여주기  
+df.name : 컬럼 이름 선택하기  
+df[['name','value']] : 여러개 컬럼 이름 선택하기  
+df.loc[:,['name','value]] : ,를 기준으로 행과 열의 이름으로 선택하기  
+df.loc[df['age] > 30], ['name','age'] : 조건을 통해 선택하기  
