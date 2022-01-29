@@ -99,3 +99,15 @@ df.name : 컬럼 이름 선택하기
 df[['name','value']] : 여러개 컬럼 이름 선택하기  
 df.loc[:,['name','value]] : ,를 기준으로 행과 열의 이름으로 선택하기  
 df.loc[df['age] > 30], ['name','age'] : 조건을 통해 선택하기  
+
+df.sort_index() : 인덱스 기준으로 정렬  
+df.sort_values('age') : 컬럼 이름을 기준으로 정렬  
+df.set_index('number', inplace=True) : 인덱스를 컬럼 이름으로 설정
+df.rename(columns = {'team':'club'}, inplace=True) : 컬럼 이름 변경하고 저장
+
+df['age'].mean() : 특정 컬럼의 평균  
+df['시장가치(억)'].sum() : 특정 컬럼의 합  
+df['nation'].mode() : 특정 컬림의 최빈값  
+df.describe() : 모든 수치형 데이터의 통계  
+df.groupby("nation") : 컴럼 이름으로 그룹화  
+df.groupby("nation").max() : 그룹화 이후 통계 확인  
