@@ -31,7 +31,7 @@ for i in range(1,3):
         number.append(int(player[0].text))
         name.append(player[3].text)
         position.append(player[4].text)
-        age.append(player[5].text)
+        age.append(int(player[5].text))
         nation.append(player[6].img['alt'])  # img 태그의 alt 속성
         team.append(player[7].img['alt'])
         value.append(player[8].text.strip()) # 공백제거
@@ -49,10 +49,10 @@ df = pd.DataFrame(
 df.to_csv('TransferMarkt50.csv', index=False)
 
 # 정렬
-print(df.sort_index(ascending=False).head())
+'''print(df.sort_index(ascending=False).head())
 print()
 print(df.sort_values("age", ascending=False).head())
-print()
+print()'''
 
 # 컴럼 이름 바꾸기
 df.rename(columns={'team':'club'}, inplace=True)
@@ -66,4 +66,30 @@ df['시장가치(억)'] = df['value']*13
 
 # 컬럼 삭제
 df.drop(columns=['value'], inplace=True)
-print(df)
+
+# 숫자형 데이터에 대한 통계
+print(df.describe())
+
+# 평균
+print(df['age'].mean())
+
+# 합계
+print(df['시장가치(억)'].sum())
+
+# 최빈값
+print(df['nation'].mode())
+
+# 국적이 England인 선수들은
+print(df[df['nation'] == 'England'])
+
+# 그룹화
+g = df.groupby('nation')
+print(g.count())
+
+# 나라별 시장가치 총 합
+print(g['시장가치(억)'].sum())
+
+# 선수들의 몸값의 합이 큰 클럽별로 정렬
+g1 = df.groupby('club')
+c =g1['시장가치(억)'].sum().sort_values(ascending=False)
+print(c)
